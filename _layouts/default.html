@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital@0;1&display=swap" rel="stylesheet">
+        <link href="./assets/styles/default.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container-outer">
+            <div id="container-inner">
+                <div id="container-side-front" class="container-side">
+                    <div id="container-main">
+                        <div id="header">
+                            <a id="header-avatar" href="#container-side-back"></a>
+                            <div id="header-logo"></div>
+                        </div>
+                        <div id="content">
+                           {{ content }}
+                        </div>
+                        <div id="socials">
+                            {% for social in site.socials %}
+                            <a class="social" href="{{ social.url }}" title="{{ social.name }}" alt="{{ social.name }}"  style="--social-icon-url: url('../images/socials/{{ social.icon }}')"></a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div id="container-side-back" class="container-side">
+                    <a class="close-button" href="#"></a>
+                    <img id="qr-code" src="./assets/images/site/qrcode.png">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
