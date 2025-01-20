@@ -13,6 +13,7 @@
     font-family: "Source Sans 3", sans-serif;
     color: var(--color-light);
     
+    --container-width: 100vw;
     --container-padding: 1rem;
     --container-border: 1rem;
 
@@ -143,13 +144,7 @@ a {
 }
 
 
-@media (max-width: 640px) {
-    :root {
-        --container-width: 100vw;
-    }
-}
-
-@media (min-width: 640px) {
+@media (min-width: 640px) and (not (max-aspect-ratio: 1))  {
     :root {
         --container-width: 640px;
     }
