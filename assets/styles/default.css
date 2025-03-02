@@ -9,13 +9,11 @@
     --color-primary: #3fbfbf;
     --color-secondary: #ff5d00;
 
-    font-size: 3.75vw;
+    font-size: 20pt;
     font-family: "Source Sans 3", sans-serif;
     color: var(--color-light);
     
     --container-width: 100vw;
-    --container-padding: 1rem;
-    --header-height: 12rem;
 }
 
 body {
@@ -47,134 +45,52 @@ body {
     }
 }
 
-a {
-    color: unset;
-}
-
 #container {
-    width: var(--container-width);
-    min-height: 100svh;
-    margin: 0 auto;
-    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.5));
-    overflow: scroll;
-}
-
-#container:has(#container-side-back:target) {
-
-    #container-side-front {
-       transform: rotateY(-180deg);
-    }
-
-    #container-side-back {
-        transform: rotateY(0deg);
-    }
-}
-
-.container-side {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-dark);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease-in-out;
-    
-}
-
-#container-main {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    width: var(--container-width);
     height: 100%;
-}
-
-#container-side-back {
-    transform: rotateY(180deg);
+    min-height: 100svh;
+    overflow: scroll;
+    background-color: var(--color-dark);
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 1));
 }
 
 #header {
-    font-size: calc(var(--container-width) * 0.01);
-    --header-padding: 0.1rem;
-
     aspect-ratio: 4;
     background-image: url("../images/header/banner.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
-    padding: 2em;
-    gap: 2em;
+    display: grid;
+    grid-template-areas: 
+        "logo  avatar"
+        "label avatar";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr auto;
+    padding: 1em;
+    grid-column-gap: 1em;
+    grid-row-gap: 0;
     box-sizing: border-box;
     justify-content: center;
 }
 
 #header-logo {
+    grid-area: logo;
+    justify-self: end;
+    align-self: center;
     background-image: url("../images/header/logo.png");
     background-size: contain;
-    background-position: center;
+    background-position: center bottom;
     background-repeat: no-repeat;
-    aspect-ratio: 1.5;
-}
-
-#header-avatar {
-    background-image: url("../images/header/avatar.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 1em solid black;
-}
-
-
-@media (min-width: 640px) and (not (max-aspect-ratio: 1))  {
-    :root {
-        --container-width: 640px;
-        font-size: 24px;
-    }
-}
-
-.close-button {
-    --close-button-size: 2rem; 
-
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    width: var(--close-button-size);
-    height: var(--close-button-size);
-    opacity: 0.5;
-}
-
-.close-button:hover {
-    opacity: 1;
-}
-
-.close-button:after {
-    display: block;
-    content: "\00d7";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: var(--close-button-size);
-    height: var(--close-button-size);
-    font-size: calc(var(--close-button-size) * 1.5);
-    text-align: center;
-    line-height: var(--close-button-size);
-    display: block;
-}
-
-#qr-code {
-    display: block;
-    margin: 0 auto;
-    width: calc(var(--container-width) * 0.5);
-    height: 100%;
-    object-fit: contain;
+    height: 60%;
+    width: 100%;
 }
 
 #content {
     padding: 1rem;
     flex-grow: 1;
-    overflow: scroll;
 
     a {
         color: var(--color-primary);
@@ -194,14 +110,14 @@ a {
     }
 }
 
+
 #socials {
     width: 100%;
-    height: 3rem;
+    aspect-ratio: 10;
     display: flex;
     justify-content: center;
-    font-size: min(1.5rem, 4vh);
-    gap: 1em;
-    padding: 0.5em;
+    gap: 2.5em;
+    padding: 1em;
     position: relative;
     box-sizing: border-box;
 
@@ -235,5 +151,19 @@ a {
         &:hover {
             background-color: var(--color-primary);
         }
+    }
+}
+
+.no-resize {
+    font-size: 2vw;
+}
+
+@media (min-width: 720px)  {
+    :root {
+        --container-width: 720px;
+    }
+
+    .no-resize {
+        font-size: 14.4px;
     }
 }

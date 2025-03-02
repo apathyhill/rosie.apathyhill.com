@@ -1,0 +1,7 @@
+<div id="footer" class="no-resize">
+    <div id="socials">
+        {% for social in site.socials %}
+        <a class="social" href="{{ social.url }}" title="{{ social.name }}" alt="{{ social.name }}"  style="--social-icon-url: url('../images/socials/{{ social.icon }}')"></a>
+        {% endfor %}
+    </div>
+</div>
