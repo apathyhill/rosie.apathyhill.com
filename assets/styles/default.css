@@ -101,6 +101,23 @@ body {
         }
     }
 
+    h1 {
+        font-variant: small-caps;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        text-align: center;
+        line-height: 1em;
+        
+
+        &::after {
+            display: block;
+            content: "";
+            background-color: var(--color-light);
+            opacity: 0.25;
+            height: 0.04em;
+        }
+    }
+
     h3, h4 {
         display: inline-block;
     }
