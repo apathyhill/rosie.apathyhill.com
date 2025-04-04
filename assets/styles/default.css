@@ -3,14 +3,19 @@
     margin: 0;
 }
 
+@font-face {
+    font-family: "Comic Helvetic";
+    src: url("../fonts/ComicHelvetic_Light.otf");
+}
+
 :root {
     --color-dark: #0f0f0f;
     --color-light: #efefef;
     --color-primary: #3fbfbf;
     --color-secondary: #ff5d00;
 
-    font-size: 20pt;
-    font-family: "Source Sans 3", sans-serif;
+    font-size: 18pt;
+    font-family: "Comic Helvetic", sans-serif;
     color: var(--color-light);
     
     --container-width: 100vw;
