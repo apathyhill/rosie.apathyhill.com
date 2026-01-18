@@ -18,10 +18,12 @@
                             </div>
                             <div id="links">
                                 {% for link in site.links %}
-                                <div class="link" style="--link-color: {{ link.color }}; --link-image: url('../images/links/{{ link.icon }}');" >
-                                    <div class="link-icon"></div>
-                                    <div class="link-title">{{ link.name}}</div>
-                                </div>
+                                <a href="{{ link.url }}">
+                                    <div class="link" style="--link-color: {{ link.color }}; --link-image: url('../images/links/{{ link.icon }}');">
+                                        <div class="link-icon"></div>
+                                        <div class="link-title">{{ link.name }}</div>
+                                    </div>
+                                </a>
                                 {% endfor %}
                             </div>
                         </div>
