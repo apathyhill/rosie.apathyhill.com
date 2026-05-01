@@ -1,223 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
-
-@keyframes bgScroll {
-    from { background-position: 0 0, center; }
-    to { background-position: var(--card-background-size) var(--card-background-size), center; }
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    border: none;
-    text-decoration: none;
-}
-
-:root {
-    --font-size: 0.05;
-    font-family: "Pangolin", sans-serif;
-    font-weight: bolder;
-    font-size: calc(100dvh * var(--font-size));
-
-    --card-margin: 0.5rem;
-    --card-aspect-ratio: 1.75;
-
-    --card-border-radius-outer: 2rem;
-    --card-border-width: 0.5rem;
-    --card-border-radius-inner: calc(var(--card-border-radius-outer) - var(--card-border-width));
-    --card-background-size: 5rem;
-
-    --card-aspect-ratio: 1.75;
-
-    color: #efefef;
-    --card-background-color-1: #0f0f0f;
-    --card-background-color-2: #1f1f1f;
-    --brand-color-1: #3fbfbf;
-    --brand-color-2: #2b5aba;
-    --shadow-color: white;
-    
-
-}
-
-#container {
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100dvh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    place-items: center;
-    padding: var(--card-margin);
-}
-
-#banner {
-    position: absolute;
-    width: 100dvw;
-    height: 100dvh;
-    z-index: -1;
-    background-image: url("../images/site/home/banner.png");
-    background-position: center bottom;
-    background-size: cover;
-}
-
-#card {
-    aspect-ratio: var(--card-aspect-ratio);
-    height: 100%;
-    overflow: hidden;
-    filter: drop-shadow(0rem 0.2rem 0.1rem rgba(0, 0, 0, 0.5));
-}
-
-.card-side {
-    border-radius: var(--card-border-radius-outer);
-    background-image: linear-gradient(in oklch, var(--brand-color-1), var(--brand-color-2));
-    background-size: contain;
-    padding: var(--card-border-width);
-    box-sizing: border-box;
-    height: 100%;
-}
-
-.card-border {
-    box-sizing: border-box;
-    border-radius: var(--card-border-radius-inner);
-    background-image: url("../images/site/home/pattern.png"), linear-gradient(-45deg, var(--card-background-color-1), var(--card-background-color-2), var(--card-background-color-1));
-    height: 100%;
-    padding: var(--card-border-radius-inner);
-    background-size: var(--card-background-size), cover;
-    animation: bgScroll 2s linear infinite;
-}
-
+            
 #content {
-    display:  flex;
-    flex-direction: row;
-    height: 100%;
+    display: flex;
     gap: 1rem;
-
-    filter: drop-shadow(0.1rem 0.1rem  0.1rem rgb(from var(--shadow-color) r g b / 0.1));
 }
-
-#info, #links {
+            
+#bio, #socials {
     flex-basis: 50%;
-    flex-grow: 0;
 }
 
-#info {
+#bio {
     display: flex;
     flex-direction: column;
-    height: 100%;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-}
-
-
-#info-logo {
-    background-image: url("../images/site/home/logo.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-    flex-basis: 20%;
-}
-
-
-
-#info-avatar {
-    background-image: url("../images/site/home/avatar.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 50%;
-    flex-grow: 1;
-    aspect-ratio: 1;
-}
-
-#links {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
     gap: 1rem;
 }
 
-.link {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    padding: 0.25rem;
-    border: 0.15rem solid var(--link-color);
-    color: var(--link-color);
-    border-radius: 0.5rem;
-    background-color: rgb(from var(--link-color) r g b / 0.1);
-    transition: transform 0.1s ease-in-out;
-}
 
-.link:hover {
-    transform: scale(105%);
-}
-
-.link-icon {
-    background-color: var(--link-color);
+#bio-avatar {
+    background-image: url("https://rosie.apathyhill.com/assets/images/site/home/avatar.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-basis: 50%;
     aspect-ratio: 1;
-    -webkit-mask-image: var(--link-image);
-    -webkit-mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-image: var(--link-image);
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
+    border-radius: 50%;
 }
 
-.link-title {
-    flex-grow: 1;
+#bio-logo {
+    background-image: url("https://rosie.apathyhill.com/assets/images/site/home/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-basis: 15%;
+    width: 100%;
+
+}
+
+#bio-description {
     text-align: center;
 }
 
-
-@media (max-aspect-ratio: 1.7125) {
-    :root {
-        font-size: calc(100dvw * var(--font-size) / var(--card-aspect-ratio));
-    }
-
-    #card {
-        width: 100%;
-        height: unset;
-    }
+#socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
-@media (max-aspect-ratio: 1) {
-    :root {
-        font-size: calc(100dvh * var(--font-size) * var(--card-aspect-ratio));
-        --card-aspect-ratio: 0.57142857142;
-    }
-
-    #card {
-        height: 100%;
-        width: unset;
-    }
-
-    #content {
-        flex-direction: column;
-    }
-
+.social {
+    width: 100%;
+    background-color: gray;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    text-decoration: none;
+    color: unset;
+    transition: transform 0.1s ease;
+    text-transform: lowercase;
 }
 
-@media (max-aspect-ratio: 0.583941606) {
-    :root {
-        font-size: calc(100dvw * var(--font-size));
-    }
-
-    #card {
-        width: 100%;
-        height: unset;
-    }
+.social:hover {
+    transform: scale(1.025);
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-
-        color: #0f0f0f;
-        --card-background-color-1: #efefef;
-        --card-background-color-2: #dfdfdf;
-        --shadow-color: black;
-    }
+.social::after {
+    display: block;
+    content: "";
+    float: right;
+    background-color: var(--text-color);
+    aspect-ratio: 1;
+    height: 100%;
+    mask-image: var(--social-logo-url);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    filter: drop-shadow(5px 5px black);
 }

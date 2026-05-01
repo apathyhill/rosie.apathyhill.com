@@ -1,35 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        {% include header-metadata.html %}
-        <link rel="stylesheet" type="text/css" href="/assets/styles/home.css">
-    </head>
-    <body>
-        <div id="container">
-            <div id="banner"></div>
-            <div id="card">
-                <div class="card-side">
-                    <div class="card-border">
-                        <div id="content">
-                            <div id="info">
-                                <div id="info-logo"></div>
-                                <div id="info-avatar"></div>
-                                <div id="info-content">{{ content }}</div>
-                            </div>
-                            <div id="links">
-                                {% for link in site.links %}
-                                <a href="{{ link.url }}">
-                                    <div class="link" style="--link-color: {{ link.color }}; --link-image: url('assets/images/links/{{ link.icon }}');">
-                                        <div class="link-icon"></div>
-                                        <div class="link-title">{{ link.name }}</div>
-                                    </div>
-                                </a>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+---
+layout: default
+---
+
+<div id="bio">
+    <div id="bio-avatar"></div>
+    <div id="bio-logo"></div>
+    <div id="bio-description">
+        {{ content }}
+    </div>
+</div>
+<div id="socials">
+    {% for social in site.socials %}
+    <a class="social" style="{{ social.style }} --social-logo-url: url('../images/socials/{{social.logo}}')" href="{{ social.url }}">{{ social.name }}</a>
+    {% endfor %}
+</div>

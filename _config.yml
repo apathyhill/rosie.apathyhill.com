@@ -1,16 +1,19 @@
 title: "Rosie&#10024;"
-color: "#3fbfbf"
+color: "#3FBFBF"
 
-links:
-  - name: "Bluesky"
-    url:  "https://bsky.app/profile/did:plc:pq2ioq3xcf7fxaxrrc4bgjwp"
-    icon: "bluesky.svg"
-    color: "#1185FE"
-  - name: "YouTube"
-    url:  "https://youtube.com/channel/UCROkaAoBA2huDt76FytJFFg"
-    icon: "youtube.svg"
-    color: "#FF0000"
-  - name: "Twitch"
-    url:  "https://twitch.tv/ahillypath"
-    icon: "twitch.svg"
-    color: "#9146FF"
+socials:
+  -
+    name: "Bluesky"
+    url: "https://bsky.app/profile/did:plc:pq2ioq3xcf7fxaxrrc4bgjwp"
+    logo: "bluesky.svg"
+    style: "background-color: #1185FE;"
+  -
+    name: "Instagram"
+    url: "https://www.instagram.com/ahillypath/"
+    logo: "instagram.svg"
+    style: "background-image: linear-gradient(90deg, #FF0069, #D300C5);"
+  -
+    name: "YouTube"
+    url: "https://www.youtube.com/channel/UCROkaAoBA2huDt76FytJFFg"
+    logo: "youtube.svg"
+    style: "background-color: #FF0033;"
