@@ -79,3 +79,14 @@
     mask-size: contain;
     filter: drop-shadow(5px 5px black);
 }
+
+@media (max-aspect-ratio: 1) {
+    #content {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #socials {
+        flex-basis: unset;
+    }
+}

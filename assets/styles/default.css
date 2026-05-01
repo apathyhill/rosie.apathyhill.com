@@ -123,12 +123,6 @@ body {
 
 }
 
-@media (max-aspect-ratio: 1) {
-    #content {
-        flex-direction: column;
-    }
-}
-
 @media (max-aspect-ratio: 2.5 / 3) {
     :root {
         font-size: calc(100dvw * var(--font-size));
