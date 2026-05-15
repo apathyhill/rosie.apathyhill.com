@@ -29,7 +29,7 @@ a {
     --brand-color: #3fbfbf;
     --window-border-width: 0.25rem;
     --window-titlebar-height: 1rem;
-    --window-aspect-ratio: 1.75;
+    --window-aspect-ratio: 0.75;
     --window-background-color-1: #0f0f0f;
     --window-background-color-2: #1f1f1f;
     --window-pattern-size: 5rem;
@@ -56,7 +56,7 @@ body {
     height: 100vh;
     aspect-ratio: var(--window-aspect-ratio);
     box-sizing: border-box;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 #window {
@@ -97,39 +97,12 @@ body {
     flex-grow: 1;
 }
 
-
-@media (max-aspect-ratio: 3.5 / 2) {
+@media (max-aspect-ratio: 3 / 4) {
     :root {
         font-size: calc(100dvw * var(--font-size) / var(--window-aspect-ratio));
     }
-
     #container {
-        width: 100%;
         height: unset;
-    }
-}
-
-@media (max-aspect-ratio: 1) {
-    :root {
-        --window-aspect-ratio: calc(2.5 / 3);
-        font-size: calc(100dvh * var(--font-size) * var(--window-aspect-ratio));
-    }
-
-    #container {
-        height: 100%;
-        width: unset;
-    }
-
-
-}
-
-@media (max-aspect-ratio: 2.5 / 3) {
-    :root {
-        font-size: calc(100dvw * var(--font-size));
-    }
-
-    #container {
         width: 100%;
-        height: unset;
     }
 }

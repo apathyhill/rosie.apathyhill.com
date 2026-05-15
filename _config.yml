@@ -12,6 +12,11 @@ socials:
     url: "https://www.instagram.com/ahillypath/"
     logo: "instagram.svg"
     style: "background-image: linear-gradient(90deg, #FF0069, #D300C5);"
+  - 
+    name: "Twitch"
+    url: "https://twitch.tv/ahillypath"
+    logo: "twitch.svg"
+    style: "background-color: #9246FF;"
   -
     name: "YouTube"
     url: "https://www.youtube.com/channel/UCROkaAoBA2huDt76FytJFFg"
