@@ -18,6 +18,11 @@ socials:
     logo: "twitch.svg"
     style: "background-color: #9246FF;"
   -
+    name: "Twitter"
+    url: "https://twitter.com/i/user/3175641238"
+    logo: "twitter.svg"
+    style: "background-color: #1DA1F2;"
+  -
     name: "YouTube"
     url: "https://www.youtube.com/channel/UCROkaAoBA2huDt76FytJFFg"
     logo: "youtube.svg"
